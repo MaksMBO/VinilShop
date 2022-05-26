@@ -5,155 +5,211 @@
                 <div class="second__button">
                     <input type="checkbox" class="genre_button-box" id="genre_button" name="genre_button" value="yes">
                     <label for="genre_button" class="label1">
-                        Жанр <img src="./image/svg/details/Vector 1.svg" alt="arrow" class="image_arrow">
+                        Жанр <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow" class="image_arrow">
                     </label>
-
                     <br>
-                    <div class="my__genre">
-                        <div class="divs">
-                            <input type="checkbox" id="Альтернативний рок">
-                            <p>Альтернативний рок</p>    <br>
+
+                        <div class="my__genre">
+                            <form action="{{ route('checkboxes') }}" method="post">
+                                @csrf
+                            <div class="divs">
+                                <label for="Альтернативний рок"></label><input type="checkbox" id="Альтернативний рок" value="Альтернативний рок" name="genre[]" >
+                                <button class="noneButton">noneButton</button>
+                                <p>Альтернативний рок</p>    <br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Арт рок" name="genre[]">
+                                </label>
+                                <p>Арт рок</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Блюз" name="genre[]">
+                                </label>
+                                <p>Блюз</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Кантрі" name="genre[]">
+                                </label>
+                                <p>Кантрі</p> <br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Фолк" name="genre[]">
+                                </label>
+                                <p>Фолк</p> <br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Фанк" name="genre[]">
+                                </label>
+                                <p>Фанк</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Гранж" name="genre[]">
+                                </label>
+                                <p>Гранж</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Хип-хоп" name="genre[]">
+                                </label>
+                                <p>Хип-хоп</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Поп" name="genre[]">
+                                </label>
+                                <p>Поп</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Інді" name="genre[]">
+                                </label>
+                                <p>Інді</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Джаз" name="genre[]">
+                                </label>
+                                <p>Джаз</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Нью вейв" name="genre[]">
+                                </label>
+                                <p>Нью вейв</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Метал" name="genre[]">
+                                </label>
+                                <p>Метал</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Реггі" name="genre[]">
+                                </label>
+                                <p>Реггі</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Електронна музика" name="genre[]">
+                                </label>
+                                <p>Електронна музика</p><br>
+                            </div>
+
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="Саундтрек" name="genre[]">
+                                </label>
+                                <p>Саундтрек</p><br>
+                            </div>
+                            </form>
                         </div>
 
-                        <div class="divs">
-                            <input type="checkbox" id="Арт рок">
-                            <p>Арт рок</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Блюз">
-                            <p>Блюз</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Кантрі">
-                            <p>Кантрі</p> <br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Фолк">
-                            <p>Фолк</p> <br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Фанк">
-                            <p>Фанк</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Гранж">
-                            <p>Гранж</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Хип-хоп">
-                            <p>Хип-хоп</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Поп">
-                            <p>Поп</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Інді">
-                            <p>Інді</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Джаз">
-                            <p>Джаз</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Нью вейв">
-                            <p>Нью вейв</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Метал">
-                            <p>Метал</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Реггі">
-                            <p>Реггі</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Електронна музика">
-                            <p>Електронна музика</p><br>
-                        </div>
-
-                        <div class="divs">
-                            <input type="checkbox" id="Саундтрек">
-                            <p>Саундтрек</p><br>
-                        </div>
-                    </div>
                 </div>
+
 
                 <div class="third__button">
                     <input type="checkbox" class="amount_button-box" id="amount_button" name="amount_button" value="yes" >
                     <label for="amount_button" class="label2">
-                        Кількість <img src="./image/svg/details/Vector 1.svg" alt="arrow" class="image_arrow">
+                        Кількість <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow" class="image_arrow">
                     </label>
 
                     <br>
                     <div class="my__amount">
                         <div class="divs">
-                            <input type="checkbox" id="1">
+                            <label>
+                                <input type="checkbox" value="1">
+                            </label>
                             <p>1</p> <br>
                         </div>
 
                         <div class="divs">
-                            <input type="checkbox" id="2">
+                            <label>
+                                <input type="checkbox" value="2">
+                            </label>
                             <p>2</p><br>
                         </div>
 
                         <div class="divs">
-                            <input type="checkbox" id="3">
+                            <label>
+                                <input type="checkbox" value="3">
+                            </label>
                             <p>3</p><br>
                         </div>
 
                         <div class="divs">
-                            <input type="checkbox" id="4">
+                            <label>
+                                <input type="checkbox" value="4">
+                            </label>
                             <p>4</p><br>
                         </div>
 
                         <div class="divs">
-                            <input type="checkbox" id="5">
+                            <label>
+                                <input type="checkbox" value="5">
+                            </label>
                             <p>5</p><br>
                         </div>
 
                         <div class="divs">
-                            <input type="checkbox" id="10">
+                            <label>
+                                <input type="checkbox" value="10">
+                            </label>
                             <p>10</p><br>
                         </div>
                     </div>
                 </div>
 
-                <div class="first__button">
-                    <input type="checkbox" class="price_button-box" id="price_button" name="price_button" value="yes">
-                    <label for="price_button" class="label3">
-                        Ціна <img src="./image/svg/details/Vector 1.svg" alt="arrow" class="image_arrow">
-                    </label>
 
-                    <br>
-                    <div class="my__price">
-                        <div class="menu__price">
-                            <input type="text" class="start">
-                            <img src="./image/svg/details/Line 1.svg" alt="line">
-                            <input type="text" class="end">
-                            <button class="ok">ОК</button>
+                <form action="{{ route('recordsPrice') }}" method="get" >
+                    <div class="first__button">
+                        <input type="checkbox" class="price_button-box" id="price_button" name="price_button" value="yes">
+                        <label for="price_button" class="label3">
+                            Ціна <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow" class="image_arrow">
+                        </label>
+
+                        <br>
+                        <div class="my__price">
+                            <div class="menu__price">
+                                <label>
+                                    <input type="text" class="start" name="start">
+                                </label>
+                                <img src="{{asset('./image/svg/details/Line 1.svg')}}" alt="line">
+                                <label>
+                                    <input type="text" class="end" name="end">
+                                </label>
+                                <button class="ok">ОК</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
+
             </div>
 
             <div class="search">
                 <form class="my__search" method="get" action="records.php"  id="searchform">
                     <input type="search" name="search">
-                    <img src="./image/svg/details/Search.svg" alt="search">
+                    <img src="{{asset('./image/svg/details/Search.svg')}}" alt="search">
                 </form>
 
 
@@ -169,14 +225,14 @@
                     <label for="mobile_filter" class="label_filter">
                         <div class="icon__filter">
                             <div class="label__div">
-                                <img src="./image/svg/icon/pngwing.com.png" alt="filter">
+                                <img src="{{asset('./image/svg/icon/pngwing.com.png')}}" alt="filter">
                                 <p>Фільтри</p>
                             </div>
 
                             <div class="search">
                                 <form class="my__search"  method="get" action="records.php"  id="searchform">
                                     <input type="search" name="search">
-                                    <img src="./image/svg/details/Search.svg" alt="search">
+                                    <img src="{{asset('./image/svg/details/Search.svg')}}" alt="search">
                                 </form>
                             </div>
                         </div>
@@ -190,92 +246,128 @@
                         <label for="mobile_genre" class="label_genre">
                             <div class="clickss">
                                 <p>Жанр</p>
-                                <img src="./image/jpg/click.png" alt="click">
-                                <img src="./image/jpg/click_active.png" alt="click_active">
+                                <img src="{{asset('./image/jpg/click.png')}}" alt="click">
+                                <img src="{{asset('./image/jpg/click_active.png')}}" alt="click_active">
                             </div>
                         </label>
 
 
                         <div class="genre"><br>
+                            <form action="{{ route('checkboxes') }}" method="post">
+                                @csrf
                             <div class="divs">
-                                <input type="checkbox" id="Альтернативний рок">
+                                <label>
+                                    <input type="checkbox" value="Альтернативний рок" name="genre[]">
+                                </label>
+                                <button class="noneButton">noneButton</button>
                                 <p>Альтернативний рок</p>    <br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Арт рок">
+                                <label>
+                                    <input type="checkbox" value="Арт рок" name="genre[]">
+                                </label>
                                 <p>Арт рок</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Блюз">
+                                <label>
+                                    <input type="checkbox" value="Блюз" name="genre[]">
+                                </label>
                                 <p>Блюз</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Кантрі">
+                                <label>
+                                    <input type="checkbox" value="Кантрі" name="genre[]">
+                                </label>
                                 <p>Кантрі</p> <br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Фолк">
+                                <label>
+                                    <input type="checkbox" value="Фолк" name="genre[]">
+                                </label>
                                 <p>Фолк</p> <br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Фанк">
+                                <label>
+                                    <input type="checkbox" value="Фанк" name="genre[]">
+                                </label>
                                 <p>Фанк</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Гранж">
+                                <label>
+                                    <input type="checkbox" value="Гранж" name="genre[]">
+                                </label>
                                 <p>Гранж</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Хип-хоп">
+                                <label>
+                                    <input type="checkbox" value="Хип-хоп" name="genre[]">
+                                </label>
                                 <p>Хип-хоп</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Поп">
+                                <label>
+                                    <input type="checkbox" value="Поп" name="genre[]">
+                                </label>
                                 <p>Поп</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Інді">
+                                <label>
+                                    <input type="checkbox" value="Інді" name="genre[]">
+                                </label>
                                 <p>Інді</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Джаз">
+                                <label>
+                                    <input type="checkbox" value="Джаз" name="genre[]">
+                                </label>
                                 <p>Джаз</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Нью вейв">
+                                <label>
+                                    <input type="checkbox" value="Нью вейв" name="genre[]">
+                                </label>
                                 <p>Нью вейв</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Метал">
+                                <label>
+                                    <input type="checkbox" value="Метал" name="genre[]">
+                                </label>
                                 <p>Метал</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Реггі">
+                                <label>
+                                    <input type="checkbox" value="Реггі" name="genre[]">
+                                </label>
                                 <p>Реггі</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Електронна музика">
+                                <label>
+                                    <input type="checkbox" value="Електронна музика" name="genre[]">
+                                </label>
                                 <p>Електронна музика</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="Саундтрек">
+                                <label>
+                                    <input type="checkbox" value="Саундтрек" name="genre[]">
+                                </label>
                                 <p>Саундтрек</p><br>
                             </div>
+                            </form>
                         </div>
 
                         <hr width="100%" size="2" color="#AFAFAF" class="lines"/>
@@ -284,40 +376,52 @@
                         <label for="mobile_amount" class="label_amount">
                             <div class="clickss">
                                 <p>Кількість</p>
-                                <img src="./image/jpg/click.png" alt="click">
-                                <img src="./image/jpg/click_active.png" alt="click_active">
+                                <img src="{{asset('./image/jpg/click.png')}}" alt="click">
+                                <img src="{{asset('./image/jpg/click_active.png')}}" alt="click_active">
                             </div>
                         </label>
 
 
                         <div class="amount"><br>
                             <div class="divs">
-                                <input type="checkbox" id="1">
+                                <label>
+                                    <input type="checkbox" value="1">
+                                </label>
                                 <p>1</p> <br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="2">
+                                <label>
+                                    <input type="checkbox" value="2">
+                                </label>
                                 <p>2</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="3">
+                                <label>
+                                    <input type="checkbox" value="3">
+                                </label>
                                 <p>3</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="4">
+                                <label>
+                                    <input type="checkbox" value="4">
+                                </label>
                                 <p>4</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="5">
+                                <label>
+                                    <input type="checkbox" value="5">
+                                </label>
                                 <p>5</p><br>
                             </div>
 
                             <div class="divs">
-                                <input type="checkbox" id="10">
+                                <label>
+                                    <input type="checkbox" value="10">
+                                </label>
                                 <p>10</p><br>
                             </div>
                         </div>
@@ -329,17 +433,21 @@
                         <label for="mobile_price" class="label_price">
                             <div class="clickss">
                                 <p>Ціна</p>
-                                <img src="./image/jpg/click.png" alt="click">
-                                <img src="./image/jpg/click_active.png" alt="click_active">
+                                <img src="{{asset('./image/jpg/click.png')}}" alt="click">
+                                <img src="{{asset('./image/jpg/click_active.png')}}" alt="click_active">
                             </div>
                         </label>
 
 
                         <div class="price"><br>
                             <div class="price_menu-mobile">
-                                <input type="text" class="start">
-                                <img src="./image/svg/details/Line 1.svg" alt="line">
-                                <input type="text" class="end">
+                                <label>
+                                    <input type="text" class="start">
+                                </label>
+                                <img src="{{asset('./image/svg/details/Line 1.svg')}}" alt="line">
+                                <label>
+                                    <input type="text" class="end">
+                                </label>
                                 <button class="ok">ОК</button>
                             </div>
                         </div>
