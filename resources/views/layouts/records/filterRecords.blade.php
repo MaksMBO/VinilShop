@@ -164,42 +164,48 @@
                         <div class="my__amount">
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="1" onchange="this.form.submit()">
+                                    <input type="checkbox" value="1" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("1", $amount)) checked @endif>
                                 </label>
                                 <p>1</p> <br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="2" onchange="this.form.submit()">
+                                    <input type="checkbox" value="2" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("2", $amount)) checked @endif>
                                 </label>
                                 <p>2</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="3" onchange="this.form.submit()">
+                                    <input type="checkbox" value="3" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("3", $amount)) checked @endif>
                                 </label>
                                 <p>3</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="4" onchange="this.form.submit()">
+                                    <input type="checkbox" value="4" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("4", $amount)) checked @endif>
                                 </label>
                                 <p>4</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="5" onchange="this.form.submit()">
+                                    <input type="checkbox" value="5" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("5", $amount)) checked @endif>
                                 </label>
                                 <p>5</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="10" onchange="this.form.submit()">
+                                    <input type="checkbox" value="10" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("10", $amount)) checked @endif>
                                 </label>
                                 <p>10</p><br>
                             </div>
@@ -441,42 +447,48 @@
                         <div class="amount"><br>
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="1" onchange="this.form.submit()">
+                                    <input type="checkbox" value="1" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("1", $amount)) checked @endif>
                                 </label>
                                 <p>1</p> <br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="2" onchange="this.form.submit()">
+                                    <input type="checkbox" value="2" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("2", $amount)) checked @endif>
                                 </label>
                                 <p>2</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="3" onchange="this.form.submit()">
+                                    <input type="checkbox" value="3" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("3", $amount)) checked @endif>
                                 </label>
                                 <p>3</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="4" onchange="this.form.submit()">
+                                    <input type="checkbox" value="4" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("4", $amount)) checked @endif>
                                 </label>
                                 <p>4</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="5" onchange="this.form.submit()">
+                                    <input type="checkbox" value="5" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("5", $amount)) checked @endif>
                                 </label>
                                 <p>5</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="10" onchange="this.form.submit()">
+                                    <input type="checkbox" value="10" name="amount[]" onchange="this.form.submit()"
+                                           @if(in_array("10", $amount)) checked @endif>
                                 </label>
                                 <p>10</p><br>
                             </div>

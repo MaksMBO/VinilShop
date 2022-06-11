@@ -16,7 +16,8 @@ class recordsController extends Controller
             ->join('albums', 'records.album', '=', 'albums.id_albums')->take(16)->get(),
             'checkGenre' => array(),
             'start' =>  NULL,
-            'end' =>  NULL]
+            'end' =>  NULL,
+            'amount' => array()]
         );
     }
 
@@ -25,6 +26,8 @@ class recordsController extends Controller
 
 
         $genre = $request->input("genre");
+
+        $amount = $request->input("amount");
 
         $start = $request->input("start");
 
@@ -107,7 +110,8 @@ class recordsController extends Controller
         return view("records", ['records' => $result,
             'checkGenre' => ($genre == NULL) ? array() : $genre,
             'start' => (isset($start)) ? $start : NULL,
-            'end' => (isset($end)) ? $end : NULL
+            'end' => (isset($end)) ? $end : NULL,
+            'amount' => ($amount == NULL) ? array() : $amount
         ]);
 
     }
