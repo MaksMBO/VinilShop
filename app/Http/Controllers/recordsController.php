@@ -13,124 +13,102 @@ class recordsController extends Controller
     public function recordsAll()
     {
         return view("records", ['records' => Record::join('artists', 'records.artist', '=', 'artists.id_artist')
-            ->join('albums', 'records.album', '=', 'albums.id_albums')->take(16)->get()]);
+            ->join('albums', 'records.album', '=', 'albums.id_albums')->take(16)->get(),
+            'checkGenre' => array(),
+            'start' =>  NULL,
+            'end' =>  NULL]
+        );
     }
 
     public function checkboxes(Request $request)
     {
-        $genre = $request->validate([
-            'genre' => 'required'
-        ])['genre'];
 
 
-        $price = $request->session()->get('price');
+        $genre = $request->input("genre");
 
-        $idRecord = array();
-        foreach ($price as $record) {
-            $idRecord[] = $record->id;
-        }
-        if(isset($idRecord)) {
-            $idRecord = Record::select('id')->get();
-        }
-
-
-        $idGenreTable = Genre::whereIn('genreName', $genre)->get();
-        $id = array();
-        foreach ($idGenreTable as $item) {
-            $id[] = $item->id;
-        }
-
-        $idAlbum = AlbumGenre::whereIn('genreId', $id)->get();
-        unset($id);
-        foreach ($idAlbum as $item) {
-            $id[] = $item->albumId;
-        }
-        if(!isset($id)) {
-            $id[] = 0;
-        }
-
-        $checkbox = Record::join('albums', 'records.album', '=', 'albums.id_albums')
-            ->join('artists', 'records.artist', '=', 'artists.id_artist')
-            ->whereIn('albums.id_albums', array_unique($id))
-            ->get();
-
-        session(['checkboxes' => $checkbox]);
-
-
-
-        return view("records", ['records' => Record::join('albums', 'records.album', '=', 'albums.id_albums')
-            ->join('artists', 'records.artist', '=', 'artists.id_artist')
-            ->whereIn('albums.id_albums', array_unique($id))
-            ->whereIn('records.id', $idRecord)
-            ->get()]);
-
-    }
-
-    public function price(Request $request)
-    {
         $start = $request->input("start");
 
         $end = $request->input("end");
 
-        $checkbox = $request->session()->get('checkboxes');
+        if(isset($genre) > 0) {
+            $idGenreTable = Genre::whereIn('genreName', $genre)->get();
 
-        $idRecord = array();
-        foreach ($checkbox as $record) {
-            $idRecord[] = $record->id;
+            $idGenre = array();
+            foreach ($idGenreTable as $item) {
+                $idGenre[] = $item->id;
+            }
+
+            $idAlbumTable = AlbumGenre::select('albumId')->whereIn('genreId', $idGenre)->get();
+
+            $idAlbum = array();
+            foreach ($idAlbumTable as $item) {
+                $idAlbum[] = $item->albumId;
+            }
         }
-        if(count($idRecord) <=0) {
-            $idRecord = Record::select('id')->get();
-        }
 
 
-        if (isset($start) and isset($end)) {
-
-            $priceCheckbox = Record::join('albums', 'records.album', '=', 'albums.id_albums')
-                ->join('artists', 'records.artist', '=', 'artists.id_artist')
+        if (isset($start) and isset($end) and isset($genre)){
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->whereIn("records.album", $idAlbum)
                 ->where('price', '<', $end)
                 ->where('price', '>', $start)
                 ->get();
-
-            session(['price' => $priceCheckbox]);
-
-            return view("records", ['records' => Record::join('albums', 'records.album', '=', 'albums.id_albums')
-                ->join('artists', 'records.artist', '=', 'artists.id_artist')
-                ->where('price', '<', $end)
-                ->where('price', '>', $start)
-                ->whereIn('records.id', $idRecord)
-                ->get()]);
         }
 
+        elseif (isset($start) and isset($genre)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->whereIn("records.album", $idAlbum)
+                ->where('price', '>', $start)
+                ->get();
+        }
 
-        if (isset($end)) {
-            $priceCheckbox = Record::join('albums', 'records.album', '=', 'albums.id_albums')
-                ->join('artists', 'records.artist', '=', 'artists.id_artist')
+        elseif (isset($end) and isset($genre)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->whereIn("records.album", $idAlbum)
                 ->where('price', '<', $end)
                 ->get();
-
-            session(['price' => $priceCheckbox]);
-
-
-            return view("records", ['records' => Record::join('albums', 'records.album', '=', 'albums.id_albums')
-                ->join('artists', 'records.artist', '=', 'artists.id_artist')
+        }
+        elseif (isset($start) and isset($end)){
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
                 ->where('price', '<', $end)
-                ->whereIn('records.id', $idRecord)
-                ->get()]);
+                ->where('price', '>', $start)
+                ->get();
+        }
+        elseif (isset($genre)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->whereIn("records.album", $idAlbum)
+                ->get();
+        }
+        elseif (isset($start)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('price', '>', $start)
+                ->get();
+        }
+        elseif (isset($end)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('price', '<', $end)
+                ->get();
+        }
+        else {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')->take(16)->get();
         }
 
 
-        $priceCheckbox = Record::join('albums', 'records.album', '=', 'albums.id_albums')
-            ->join('artists', 'records.artist', '=', 'artists.id_artist')
-            ->where('price', '>', $start)
-            ->get();
 
-        session(['price' => $priceCheckbox]);
 
-        return view("records", ['records' => Record::join('albums', 'records.album', '=', 'albums.id_albums')
-            ->join('artists', 'records.artist', '=', 'artists.id_artist')
-            ->where('price', '>', $start)
-            ->whereIn('records.id', $idRecord)
-            ->get()]);
+        return view("records", ['records' => $result,
+            'checkGenre' => ($genre == NULL) ? array() : $genre,
+            'start' => (isset($start)) ? $start : NULL,
+            'end' => (isset($end)) ? $end : NULL
+        ]);
 
     }
 }

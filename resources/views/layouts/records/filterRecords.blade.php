@@ -1,213 +1,240 @@
 <section class="section">
     <div class="container">
         <div class="button__helper">
-            <div class="buttons__examination">
-                <div class="second__button">
-                    <input type="checkbox" class="genre_button-box" id="genre_button" name="genre_button" value="yes">
-                    <label for="genre_button" class="label1">
-                        Жанр <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow" class="image_arrow">
-                    </label>
-                    <br>
+            <form action="{{ route('checkboxes') }}" method="get" class="form_for_filters">
+                <div class="buttons__examination">
+                    <div class="second__button">
+                        <input type="checkbox" class="genre_button-box" id="genre_button" name="genre_button"
+                               value="yes">
+                        <label for="genre_button" class="label1">
+                            Жанр <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow"
+                                      class="image_arrow">
+                        </label>
+                        <br>
+
 
                         <div class="my__genre">
-                            <form action="{{ route('checkboxes') }}" method="post">
-                                @csrf
+
+
                             <div class="divs">
-                                <label for="Альтернативний рок"></label><input type="checkbox" id="Альтернативний рок" value="Альтернативний рок" name="genre[]" >
+                                <label for="Альтернативний рок"></label>
+                                <input type="checkbox" id="Альтернативний рок" value="Альтернативний рок" name="genre[]"
+                                       onchange="this.form.submit()"
+                                       @if(in_array("Альтернативний рок", $checkGenre)) checked @endif>
                                 <button class="noneButton">noneButton</button>
                                 <p>Альтернативний рок</p>    <br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Арт рок" name="genre[]">
+                                    <input type="checkbox" value="Арт рок" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Арт рок", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Арт рок</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Блюз" name="genre[]">
+                                    <input type="checkbox" value="Блюз" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Блюз", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Блюз</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Кантрі" name="genre[]">
+                                    <input type="checkbox" value="Кантрі" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Кантрі", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Кантрі</p> <br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Фолк" name="genre[]">
+                                    <input type="checkbox" value="Фолк" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Фолк", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Фолк</p> <br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Фанк" name="genre[]">
+                                    <input type="checkbox" value="Фанк" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Фанк", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Фанк</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Гранж" name="genre[]">
+                                    <input type="checkbox" value="Гранж" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Гранж", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Гранж</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Хип-хоп" name="genre[]">
+                                    <input type="checkbox" value="Хип-хоп" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Хип-хоп", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Хип-хоп</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Поп" name="genre[]">
+                                    <input type="checkbox" value="Поп" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Поп", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Поп</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Інді" name="genre[]">
+                                    <input type="checkbox" value="Інді" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Інді", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Інді</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Джаз" name="genre[]">
+                                    <input type="checkbox" value="Джаз" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Джаз", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Джаз</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Нью вейв" name="genre[]">
+                                    <input type="checkbox" value="Нью вейв" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Нью вейв", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Нью вейв</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Метал" name="genre[]">
+                                    <input type="checkbox" value="Метал" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Метал", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Метал</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Реггі" name="genre[]">
+                                    <input type="checkbox" value="Реггі" name="genre[]" onchange="this.form.submit()"
+                                           @if(in_array("Реггі", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Реггі</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Електронна музика" name="genre[]">
+                                    <input type="checkbox" value="Електронна музика" name="genre[]"
+                                           onchange="this.form.submit()"
+                                           @if(in_array("Електронна музика", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Електронна музика</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Саундтрек" name="genre[]">
+                                    <input type="checkbox" value="Саундтрек" name="genre[]"
+                                           onchange="this.form.submit()"
+                                           @if(in_array("Саундтрек", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Саундтрек</p><br>
                             </div>
-                            </form>
+
                         </div>
 
-                </div>
+                    </div>
 
 
-                <div class="third__button">
-                    <input type="checkbox" class="amount_button-box" id="amount_button" name="amount_button" value="yes" >
-                    <label for="amount_button" class="label2">
-                        Кількість <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow" class="image_arrow">
-                    </label>
+                    <div class="third__button">
+                        <input type="checkbox" class="amount_button-box" id="amount_button" name="amount_button"
+                               value="yes">
+                        <label for="amount_button" class="label2">
+                            Кількість <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow"
+                                           class="image_arrow">
+                        </label>
 
-                    <br>
-                    <div class="my__amount">
-                        <div class="divs">
-                            <label>
-                                <input type="checkbox" value="1">
-                            </label>
-                            <p>1</p> <br>
-                        </div>
+                        <br>
+                        <div class="my__amount">
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="1" onchange="this.form.submit()">
+                                </label>
+                                <p>1</p> <br>
+                            </div>
 
-                        <div class="divs">
-                            <label>
-                                <input type="checkbox" value="2">
-                            </label>
-                            <p>2</p><br>
-                        </div>
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="2" onchange="this.form.submit()">
+                                </label>
+                                <p>2</p><br>
+                            </div>
 
-                        <div class="divs">
-                            <label>
-                                <input type="checkbox" value="3">
-                            </label>
-                            <p>3</p><br>
-                        </div>
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="3" onchange="this.form.submit()">
+                                </label>
+                                <p>3</p><br>
+                            </div>
 
-                        <div class="divs">
-                            <label>
-                                <input type="checkbox" value="4">
-                            </label>
-                            <p>4</p><br>
-                        </div>
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="4" onchange="this.form.submit()">
+                                </label>
+                                <p>4</p><br>
+                            </div>
 
-                        <div class="divs">
-                            <label>
-                                <input type="checkbox" value="5">
-                            </label>
-                            <p>5</p><br>
-                        </div>
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="5" onchange="this.form.submit()">
+                                </label>
+                                <p>5</p><br>
+                            </div>
 
-                        <div class="divs">
-                            <label>
-                                <input type="checkbox" value="10">
-                            </label>
-                            <p>10</p><br>
+                            <div class="divs">
+                                <label>
+                                    <input type="checkbox" value="10" onchange="this.form.submit()">
+                                </label>
+                                <p>10</p><br>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <form action="{{ route('recordsPrice') }}" method="get" >
                     <div class="first__button">
-                        <input type="checkbox" class="price_button-box" id="price_button" name="price_button" value="yes">
+                        <input type="checkbox" class="price_button-box" id="price_button" name="price_button"
+                               value="yes">
                         <label for="price_button" class="label3">
-                            Ціна <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow" class="image_arrow">
+                            Ціна <img src="{{asset('./image/svg/details/Vector 1.svg')}}" alt="arrow"
+                                      class="image_arrow">
                         </label>
 
                         <br>
                         <div class="my__price">
                             <div class="menu__price">
                                 <label>
-                                    <input type="text" class="start" name="start">
+                                    <input type="text" class="start" name="start" value={{$start}}>
                                 </label>
                                 <img src="{{asset('./image/svg/details/Line 1.svg')}}" alt="line">
                                 <label>
-                                    <input type="text" class="end" name="end">
+                                    <input type="text" class="end" name="end" value={{$end}}>
                                 </label>
                                 <button class="ok">ОК</button>
                             </div>
                         </div>
                     </div>
-                </form>
 
-            </div>
 
+                </div>
+            </form>
             <div class="search">
-                <form class="my__search" method="get" action="records.php"  id="searchform">
+                <form class="my__search" method="get" action="records.php" id="searchform">
                     <input type="search" name="search">
                     <img src="{{asset('./image/svg/details/Search.svg')}}" alt="search">
                 </form>
@@ -230,7 +257,7 @@
                             </div>
 
                             <div class="search">
-                                <form class="my__search"  method="get" action="records.php"  id="searchform">
+                                <form class="my__search" method="get" action="records.php" id="searchform">
                                     <input type="search" name="search">
                                     <img src="{{asset('./image/svg/details/Search.svg')}}" alt="search">
                                 </form>
@@ -238,11 +265,14 @@
                         </div>
                     </label>
 
+
                     <div class="div">
+                        <form action="{{ route('checkboxes') }}" method="get">
                         <br>
                         <hr width="100%" size="2" color="#AFAFAF" class="lines-first"/>
 
-                        <input type="checkbox" class="mobile_genre-checkbox" id="mobile_genre" name="mobile_genre" value="yes">
+                        <input type="checkbox" class="mobile_genre-checkbox" id="mobile_genre" name="mobile_genre"
+                               value="yes">
                         <label for="mobile_genre" class="label_genre">
                             <div class="clickss">
                                 <p>Жанр</p>
@@ -253,126 +283,152 @@
 
 
                         <div class="genre"><br>
-                            <form action="{{ route('checkboxes') }}" method="post">
-                                @csrf
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Альтернативний рок" name="genre[]">
-                                </label>
-                                <button class="noneButton">noneButton</button>
-                                <p>Альтернативний рок</p>    <br>
-                            </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Арт рок" name="genre[]">
-                                </label>
-                                <p>Арт рок</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Альтернативний рок" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Альтернативний рок", $checkGenre)) checked @endif>
+                                    </label>
+                                    <button class="noneButton">noneButton</button>
+                                    <p>Альтернативний рок</p>    <br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Блюз" name="genre[]">
-                                </label>
-                                <p>Блюз</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Арт рок" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Арт рок", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Арт рок</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Кантрі" name="genre[]">
-                                </label>
-                                <p>Кантрі</p> <br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Блюз" name="genre[]" onchange="this.form.submit()"
+                                               @if(in_array("Блюз", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Блюз</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Фолк" name="genre[]">
-                                </label>
-                                <p>Фолк</p> <br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Кантрі" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Кантрі", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Кантрі</p> <br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Фанк" name="genre[]">
-                                </label>
-                                <p>Фанк</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Фолк" name="genre[]" onchange="this.form.submit()"
+                                               @if(in_array("Фолк", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Фолк</p> <br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Гранж" name="genre[]">
-                                </label>
-                                <p>Гранж</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Фанк" name="genre[]" onchange="this.form.submit()"
+                                               @if(in_array("Фанк", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Фанк</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Хип-хоп" name="genre[]">
-                                </label>
-                                <p>Хип-хоп</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Гранж" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Гранж", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Гранж</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Поп" name="genre[]">
-                                </label>
-                                <p>Поп</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Хип-хоп" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Хип-хоп", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Хип-хоп</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Інді" name="genre[]">
-                                </label>
-                                <p>Інді</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Поп" name="genre[]" onchange="this.form.submit()"
+                                               @if(in_array("Поп", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Поп</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Джаз" name="genre[]">
-                                </label>
-                                <p>Джаз</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Інді" name="genre[]" onchange="this.form.submit()"
+                                               @if(in_array("Інді", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Інді</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Нью вейв" name="genre[]">
-                                </label>
-                                <p>Нью вейв</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Джаз" name="genre[]" onchange="this.form.submit()"
+                                               @if(in_array("Джаз", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Джаз</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Метал" name="genre[]">
-                                </label>
-                                <p>Метал</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Нью вейв" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Нью вейв", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Нью вейв</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Реггі" name="genre[]">
-                                </label>
-                                <p>Реггі</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Метал" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Метал", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Метал</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Електронна музика" name="genre[]">
-                                </label>
-                                <p>Електронна музика</p><br>
-                            </div>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Реггі" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Реггі", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Реггі</p><br>
+                                </div>
 
-                            <div class="divs">
-                                <label>
-                                    <input type="checkbox" value="Саундтрек" name="genre[]">
-                                </label>
-                                <p>Саундтрек</p><br>
-                            </div>
-                            </form>
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Електронна музика" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Електронна музика", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Електронна музика</p><br>
+                                </div>
+
+                                <div class="divs">
+                                    <label>
+                                        <input type="checkbox" value="Саундтрек" name="genre[]"
+                                               onchange="this.form.submit()"
+                                               @if(in_array("Саундтрек", $checkGenre)) checked @endif>
+                                    </label>
+                                    <p>Саундтрек</p><br>
+                                </div>
+
                         </div>
 
                         <hr width="100%" size="2" color="#AFAFAF" class="lines"/>
 
-                        <input type="checkbox" class="mobile_amount-checkbox" id="mobile_amount" name="mobile_amount" value="yes">
+                        <input type="checkbox" class="mobile_amount-checkbox" id="mobile_amount" name="mobile_amount"
+                               value="yes">
                         <label for="mobile_amount" class="label_amount">
                             <div class="clickss">
                                 <p>Кількість</p>
@@ -385,42 +441,42 @@
                         <div class="amount"><br>
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="1">
+                                    <input type="checkbox" value="1" onchange="this.form.submit()">
                                 </label>
                                 <p>1</p> <br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="2">
+                                    <input type="checkbox" value="2" onchange="this.form.submit()">
                                 </label>
                                 <p>2</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="3">
+                                    <input type="checkbox" value="3" onchange="this.form.submit()">
                                 </label>
                                 <p>3</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="4">
+                                    <input type="checkbox" value="4" onchange="this.form.submit()">
                                 </label>
                                 <p>4</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="5">
+                                    <input type="checkbox" value="5" onchange="this.form.submit()">
                                 </label>
                                 <p>5</p><br>
                             </div>
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="10">
+                                    <input type="checkbox" value="10" onchange="this.form.submit()">
                                 </label>
                                 <p>10</p><br>
                             </div>
@@ -429,7 +485,8 @@
 
                         <hr width="100%" size="2" color="#AFAFAF" class="lines"/>
 
-                        <input type="checkbox" class="mobile_price-checkbox" id="mobile_price" name="mobile_price" value="yes">
+                        <input type="checkbox" class="mobile_price-checkbox" id="mobile_price" name="mobile_price"
+                               value="yes">
                         <label for="mobile_price" class="label_price">
                             <div class="clickss">
                                 <p>Ціна</p>
@@ -442,19 +499,22 @@
                         <div class="price"><br>
                             <div class="price_menu-mobile">
                                 <label>
-                                    <input type="text" class="start">
+                                    <input type="text" class="start" name="start" value={{$start}}>
                                 </label>
                                 <img src="{{asset('./image/svg/details/Line 1.svg')}}" alt="line">
                                 <label>
-                                    <input type="text" class="end">
+                                    <input type="text" class="end" name="end" value={{$end}}>
                                 </label>
                                 <button class="ok">ОК</button>
                             </div>
                         </div>
 
                         <hr width="100%" size="2" color="#AFAFAF" class="lines"/>
+                        </form>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>

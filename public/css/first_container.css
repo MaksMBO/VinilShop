@@ -122,7 +122,8 @@ input[type="checkbox"] {
 .amount_button-box:checked + label.label2 ~ div {
   display: inline-block;
 }
-.buttons__examination {
+.buttons__examination,
+.form_for_filters {
   display: flex;
   width: 100%;
   max-width: 280px;
