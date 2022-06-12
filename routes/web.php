@@ -27,10 +27,6 @@ Route::get('/information', function () {
     return view('information_page');
 })->name('information');
 
-//Route::get('/records', function () {
-//    return view('records');
-//})->name('records');
-
 Route::post('/register/signup', 'usersController@submit')->name('signup');
 
 Route::post('/login/signin', 'usersController@allData')->name('signin');
@@ -46,3 +42,5 @@ Route::get('/records', 'recordsController@recordsAll')->name('records');
 Route::get('records/checkboxes', 'recordsController@checkboxes')->name('checkboxes');
 
 Route::get('records/{id}', 'recordsController@page')->name('recordPage');
+
+Route::post('records/search', 'recordsController@search')->name('recordsSearch');

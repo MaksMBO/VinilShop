@@ -240,7 +240,8 @@
                 </div>
             </form>
             <div class="search">
-                <form class="my__search" method="get" action="records.php" id="searchform">
+                <form class="my__search" method="post" action="{{ route("recordsSearch") }}" id="searchform">
+                    @csrf
                     <input type="search" name="search">
                     <img src="{{asset('./image/svg/details/Search.svg')}}" alt="search">
                 </form>

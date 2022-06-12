@@ -22,7 +22,7 @@
                     </button>
                 </div>
                 <div class="tracklist">
-                    @if(isset($record[0]->playlist))  {{  printf($record[0]->playlist)  }} @endif
+                    @if(isset($record[0]->playlist))  {{  print(substr($record[0]->playlist,0,-1))  }} @endif
                 </div>
             </div>
         </div>

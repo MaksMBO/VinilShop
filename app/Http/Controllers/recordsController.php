@@ -32,7 +32,7 @@ class recordsController extends Controller
         $end = $request->input("end");
 
 
-        if(isset($genre) > 0) {
+        if(isset($genre)) {
             $idGenreTable = Genre::whereIn('genreName', $genre)->get();
 
             $idGenre = array();
@@ -49,12 +49,51 @@ class recordsController extends Controller
         }
 
 
-        if (isset($start) and isset($end) and isset($genre)){
+
+
+        if (isset($start) and isset($end) and isset($genre) and isset($amount)){
             $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
                 ->join('albums', 'records.album', '=', 'albums.id_albums')
                 ->whereIn("records.album", $idAlbum)
                 ->where('price', '<', $end)
                 ->where('price', '>', $start)
+                ->where('amount', '>=', $amount)
+                ->get();
+        }
+
+        elseif (isset($start) and isset($end) and isset($genre)){
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->whereIn("records.album", $idAlbum)
+                ->where('price', '<', $end)
+                ->where('price', '>', $start)
+                ->get();
+        }
+
+        elseif (isset($start) and isset($end) and isset($amount)){
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('amount', '>=', $amount)
+                ->where('price', '<', $end)
+                ->where('price', '>', $start)
+                ->get();
+        }
+
+        elseif (isset($start) and isset($amount) and isset($genre)){
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->whereIn("records.album", $idAlbum)
+                ->where('price', '>', $start)
+                ->where('amount', '>=', $amount)
+                ->get();
+        }
+
+        elseif (isset($amount) and isset($end) and isset($genre)){
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('amount', '>=', $amount)
+                ->where('price', '<', $end)
+                ->whereIn("records.album", $idAlbum)
                 ->get();
         }
 
@@ -73,6 +112,7 @@ class recordsController extends Controller
                 ->where('price', '<', $end)
                 ->get();
         }
+
         elseif (isset($start) and isset($end)){
             $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
                 ->join('albums', 'records.album', '=', 'albums.id_albums')
@@ -80,24 +120,59 @@ class recordsController extends Controller
                 ->where('price', '>', $start)
                 ->get();
         }
+
+        elseif (isset($end) and isset($amount)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('amount', '>=', $amount)
+                ->where('price', '<', $end)
+                ->get();
+        }
+
+        elseif (isset($start) and isset($amount)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('amount', '>=', $amount)
+                ->where('price', '>', $start)
+                ->get();
+        }
+
+        elseif (isset($genre) and isset($amount)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('amount', '>=', $amount)
+                ->whereIn("records.album", $idAlbum)
+                ->get();
+        }
+
         elseif (isset($genre)) {
             $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
                 ->join('albums', 'records.album', '=', 'albums.id_albums')
                 ->whereIn("records.album", $idAlbum)
                 ->get();
         }
+
         elseif (isset($start)) {
             $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
                 ->join('albums', 'records.album', '=', 'albums.id_albums')
                 ->where('price', '>', $start)
                 ->get();
         }
+
         elseif (isset($end)) {
             $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
                 ->join('albums', 'records.album', '=', 'albums.id_albums')
                 ->where('price', '<', $end)
                 ->get();
         }
+
+        elseif (isset($amount)) {
+            $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+                ->join('albums', 'records.album', '=', 'albums.id_albums')
+                ->where('amount', '>=', $amount)
+                ->get();
+        }
+
         else {
             $result = Record::join('artists', 'records.artist', '=', 'artists.id_artist')
                 ->join('albums', 'records.album', '=', 'albums.id_albums')->take(16)->get();
@@ -123,11 +198,17 @@ class recordsController extends Controller
             ->inRandomOrder()
             ->take(4)
             ->get()]);
+    }
 
+    public function search(Request $request){
+        $search = $request->input('search');
 
-//        return dd(Record::join('artists', 'records.artist', '=', 'artists.id_artist')
-//            ->join('albums', 'records.album', '=', 'albums.id_albums')
-//            ->where('id', '=', $id)
-//            ->get());
+        return view("records", ['records' => Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+            ->join('albums', 'records.album', '=', 'albums.id_albums')
+            ->whereRaw("`title` LIKE '$search' OR `name` LIKE '$search'")->get(),
+            'checkGenre' => array(),
+            'start' =>  NULL,
+            'end' =>  NULL,
+            'amount' => array()]);
     }
 }
