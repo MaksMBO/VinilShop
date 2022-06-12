@@ -44,3 +44,7 @@ Route::get('records/checkboxes', 'recordsController@checkboxes')->name('checkbox
 Route::get('records/{id}', 'recordsController@page')->name('recordPage');
 
 Route::post('records/search', 'recordsController@search')->name('recordsSearch');
+
+Route::get('Contact.blade.php', function () {
+    return view('contact');
+})->name('footer');

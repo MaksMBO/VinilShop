@@ -16,6 +16,10 @@
     <a href="{{ route('records') }}" class="nav__link">Платівки</a>
 @endsection
 
+@section('footers')
+    <a href="{{ route('footer') }}" class="nav__link">Контакти</a>
+@endsection
+
 <div class="intro__first_container">
     <div class="container">
         <h1 class="title__first_container">

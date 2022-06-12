@@ -11,7 +11,7 @@
                 @yield('main_page')
                 @yield('turntables_page')
                 @yield('records_page')
-                <a href="#!" class="nav__link">Контакти</a>
+                @yield('footers')
             </nav>
 
             <div class="basket__logo">

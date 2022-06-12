@@ -20,6 +20,10 @@
     <a href="{{ route('records') }}" class="nav__link active">Платівки</a>
 @endsection
 
+@section('footers')
+    <a href="{{ route('footer') }}" class="nav__link">Контакти</a>
+@endsection
+
 @section('secondContainer')
     @extends('layouts.records.secondContaninerRecords')
 @endsection
