@@ -19,7 +19,7 @@
                             <div class="divs">
                                 <label for="Альтернативний рок"></label>
                                 <input type="checkbox" id="Альтернативний рок" value="Альтернативний рок" name="genre[]"
-                                       onchange="this.form.submit()"
+
                                        @if(in_array("Альтернативний рок", $checkGenre)) checked @endif>
                                 <button class="noneButton">noneButton</button>
                                 <p>Альтернативний рок</p>    <br>
@@ -27,7 +27,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Арт рок" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Арт рок" name="genre[]"
                                            @if(in_array("Арт рок", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Арт рок</p><br>
@@ -35,7 +35,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Блюз" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Блюз" name="genre[]"
                                            @if(in_array("Блюз", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Блюз</p><br>
@@ -43,7 +43,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Кантрі" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Кантрі" name="genre[]"
                                            @if(in_array("Кантрі", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Кантрі</p> <br>
@@ -51,7 +51,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Фолк" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Фолк" name="genre[]"
                                            @if(in_array("Фолк", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Фолк</p> <br>
@@ -59,7 +59,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Фанк" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Фанк" name="genre[]"
                                            @if(in_array("Фанк", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Фанк</p><br>
@@ -67,7 +67,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Гранж" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Гранж" name="genre[]"
                                            @if(in_array("Гранж", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Гранж</p><br>
@@ -75,7 +75,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Хип-хоп" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Хип-хоп" name="genre[]"
                                            @if(in_array("Хип-хоп", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Хип-хоп</p><br>
@@ -83,7 +83,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Поп" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Поп" name="genre[]"
                                            @if(in_array("Поп", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Поп</p><br>
@@ -91,7 +91,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Інді" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Інді" name="genre[]"
                                            @if(in_array("Інді", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Інді</p><br>
@@ -99,7 +99,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Джаз" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Джаз" name="genre[]"
                                            @if(in_array("Джаз", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Джаз</p><br>
@@ -107,7 +107,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Нью вейв" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Нью вейв" name="genre[]"
                                            @if(in_array("Нью вейв", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Нью вейв</p><br>
@@ -115,7 +115,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Метал" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Метал" name="genre[]"
                                            @if(in_array("Метал", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Метал</p><br>
@@ -123,7 +123,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="Реггі" name="genre[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="Реггі" name="genre[]"
                                            @if(in_array("Реггі", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Реггі</p><br>
@@ -132,7 +132,7 @@
                             <div class="divs">
                                 <label>
                                     <input type="checkbox" value="Електронна музика" name="genre[]"
-                                           onchange="this.form.submit()"
+
                                            @if(in_array("Електронна музика", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Електронна музика</p><br>
@@ -141,7 +141,7 @@
                             <div class="divs">
                                 <label>
                                     <input type="checkbox" value="Саундтрек" name="genre[]"
-                                           onchange="this.form.submit()"
+
                                            @if(in_array("Саундтрек", $checkGenre)) checked @endif>
                                 </label>
                                 <p>Саундтрек</p><br>
@@ -164,7 +164,7 @@
                         <div class="my__amount">
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="1" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="1" name="amount[]"
                                            @if(in_array("1", $amount)) checked @endif>
                                 </label>
                                 <p>1</p> <br>
@@ -172,7 +172,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="2" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="2" name="amount[]"
                                            @if(in_array("2", $amount)) checked @endif>
                                 </label>
                                 <p>2</p><br>
@@ -180,7 +180,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="3" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="3" name="amount[]"
                                            @if(in_array("3", $amount)) checked @endif>
                                 </label>
                                 <p>3</p><br>
@@ -188,7 +188,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="4" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="4" name="amount[]"
                                            @if(in_array("4", $amount)) checked @endif>
                                 </label>
                                 <p>4</p><br>
@@ -196,7 +196,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="5" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="5" name="amount[]"
                                            @if(in_array("5", $amount)) checked @endif>
                                 </label>
                                 <p>5</p><br>
@@ -204,7 +204,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="10" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="10" name="amount[]"
                                            @if(in_array("10", $amount)) checked @endif>
                                 </label>
                                 <p>10</p><br>
@@ -293,7 +293,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Альтернативний рок" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Альтернативний рок", $checkGenre)) checked @endif>
                                     </label>
                                     <button class="noneButton">noneButton</button>
@@ -303,7 +303,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Арт рок" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Арт рок", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Арт рок</p><br>
@@ -311,7 +311,7 @@
 
                                 <div class="divs">
                                     <label>
-                                        <input type="checkbox" value="Блюз" name="genre[]" onchange="this.form.submit()"
+                                        <input type="checkbox" value="Блюз" name="genre[]"
                                                @if(in_array("Блюз", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Блюз</p><br>
@@ -320,7 +320,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Кантрі" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Кантрі", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Кантрі</p> <br>
@@ -328,7 +328,7 @@
 
                                 <div class="divs">
                                     <label>
-                                        <input type="checkbox" value="Фолк" name="genre[]" onchange="this.form.submit()"
+                                        <input type="checkbox" value="Фолк" name="genre[]"
                                                @if(in_array("Фолк", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Фолк</p> <br>
@@ -336,7 +336,7 @@
 
                                 <div class="divs">
                                     <label>
-                                        <input type="checkbox" value="Фанк" name="genre[]" onchange="this.form.submit()"
+                                        <input type="checkbox" value="Фанк" name="genre[]"
                                                @if(in_array("Фанк", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Фанк</p><br>
@@ -345,7 +345,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Гранж" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Гранж", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Гранж</p><br>
@@ -354,7 +354,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Хип-хоп" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Хип-хоп", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Хип-хоп</p><br>
@@ -362,7 +362,7 @@
 
                                 <div class="divs">
                                     <label>
-                                        <input type="checkbox" value="Поп" name="genre[]" onchange="this.form.submit()"
+                                        <input type="checkbox" value="Поп" name="genre[]"
                                                @if(in_array("Поп", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Поп</p><br>
@@ -370,7 +370,7 @@
 
                                 <div class="divs">
                                     <label>
-                                        <input type="checkbox" value="Інді" name="genre[]" onchange="this.form.submit()"
+                                        <input type="checkbox" value="Інді" name="genre[]"
                                                @if(in_array("Інді", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Інді</p><br>
@@ -378,7 +378,7 @@
 
                                 <div class="divs">
                                     <label>
-                                        <input type="checkbox" value="Джаз" name="genre[]" onchange="this.form.submit()"
+                                        <input type="checkbox" value="Джаз" name="genre[]"
                                                @if(in_array("Джаз", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Джаз</p><br>
@@ -387,7 +387,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Нью вейв" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Нью вейв", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Нью вейв</p><br>
@@ -396,7 +396,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Метал" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Метал", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Метал</p><br>
@@ -405,7 +405,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Реггі" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Реггі", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Реггі</p><br>
@@ -414,7 +414,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Електронна музика" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Електронна музика", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Електронна музика</p><br>
@@ -423,7 +423,7 @@
                                 <div class="divs">
                                     <label>
                                         <input type="checkbox" value="Саундтрек" name="genre[]"
-                                               onchange="this.form.submit()"
+
                                                @if(in_array("Саундтрек", $checkGenre)) checked @endif>
                                     </label>
                                     <p>Саундтрек</p><br>
@@ -447,7 +447,7 @@
                         <div class="amount"><br>
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="1" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="1" name="amount[]"
                                            @if(in_array("1", $amount)) checked @endif>
                                 </label>
                                 <p>1</p> <br>
@@ -455,7 +455,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="2" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="2" name="amount[]"
                                            @if(in_array("2", $amount)) checked @endif>
                                 </label>
                                 <p>2</p><br>
@@ -463,7 +463,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="3" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="3" name="amount[]"
                                            @if(in_array("3", $amount)) checked @endif>
                                 </label>
                                 <p>3</p><br>
@@ -471,7 +471,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="4" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="4" name="amount[]"
                                            @if(in_array("4", $amount)) checked @endif>
                                 </label>
                                 <p>4</p><br>
@@ -479,7 +479,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="5" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="5" name="amount[]"
                                            @if(in_array("5", $amount)) checked @endif>
                                 </label>
                                 <p>5</p><br>
@@ -487,7 +487,7 @@
 
                             <div class="divs">
                                 <label>
-                                    <input type="checkbox" value="10" name="amount[]" onchange="this.form.submit()"
+                                    <input type="checkbox" value="10" name="amount[]"
                                            @if(in_array("10", $amount)) checked @endif>
                                 </label>
                                 <p>10</p><br>

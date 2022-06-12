@@ -23,8 +23,6 @@ class recordsController extends Controller
 
     public function checkboxes(Request $request)
     {
-
-
         $genre = $request->input("genre");
 
         $amount = $request->input("amount");
@@ -32,6 +30,7 @@ class recordsController extends Controller
         $start = $request->input("start");
 
         $end = $request->input("end");
+
 
         if(isset($genre) > 0) {
             $idGenreTable = Genre::whereIn('genreName', $genre)->get();
@@ -105,14 +104,30 @@ class recordsController extends Controller
         }
 
 
-
-
         return view("records", ['records' => $result,
             'checkGenre' => ($genre == NULL) ? array() : $genre,
             'start' => (isset($start)) ? $start : NULL,
             'end' => (isset($end)) ? $end : NULL,
             'amount' => ($amount == NULL) ? array() : $amount
         ]);
+    }
 
+    public function page($id) {
+        return view("information_page", ['record' => Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+            ->join('albums', 'records.album', '=', 'albums.id_albums')
+            ->where('id', '=', $id)
+            ->get(),
+            'anothers' => Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+            ->join('albums', 'records.album', '=', 'albums.id_albums')
+            ->where('id', '<>', $id)
+            ->inRandomOrder()
+            ->take(4)
+            ->get()]);
+
+
+//        return dd(Record::join('artists', 'records.artist', '=', 'artists.id_artist')
+//            ->join('albums', 'records.album', '=', 'albums.id_albums')
+//            ->where('id', '=', $id)
+//            ->get());
     }
 }

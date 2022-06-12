@@ -8,7 +8,7 @@
                 <div class="album__all">
                     <div class="about__albums__item">
                         <div class="images__albums">
-                            <a href="{{ route('information') }}">
+                            <a href="{{ route('recordPage', $record->id) }}">
                                 <img src="data:image/png;base64,{!! base64_encode($record->mainPhoto) !!}" alt="sinatra">
                             </a>
                         </div>
@@ -21,7 +21,7 @@
                             <p class="price__number">{{ $record->price }} грн.</p>
                             <div class="button_buy-pic">
                                 <button class="button__buy">
-                                    <a href="{{ route('information') }}" class="section__purchase">
+                                    <a href="{{ route('recordPage', $record->id) }}" class="section__purchase">
                                         Купити</a>
                                 </button>
                             </div>

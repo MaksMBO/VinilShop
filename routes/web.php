@@ -38,9 +38,11 @@ Route::post('/login/signin', 'usersController@allData')->name('signin');
 Route::get("/lending", 'TurntablesController@turntablesForLending')->name('lending');
 
 Route::get('/turntables', 'TurntablesController@turntablesAll')->name('turntables');
+
 Route::get('/turntables/search', 'TurntablesController@turntablesSearch')->name('turntablesSearch');
 
 Route::get('/records', 'recordsController@recordsAll')->name('records');
 
 Route::get('records/checkboxes', 'recordsController@checkboxes')->name('checkboxes');
-//Route::get('records/price', 'recordsController@checkboxes')->name('recordsPrice');
+
+Route::get('records/{id}', 'recordsController@page')->name('recordPage');
